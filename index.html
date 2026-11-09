@@ -9,7 +9,7 @@ a.big{display:flex;align-items:center;justify-content:center;min-height:84px;bac
 <a class="big" href="outil.html?m=pose">Poseur</a><a class="big sec" href="outil.html?m=reception">Levée / Réception</a>
 <div id="st">Préparation du mode hors réseau…</div>
 <p class="mute">Pour l'installer : Android (Chrome) menu ⋮ → « Installer l'application » ; iPhone (Safari) Partager → « Sur l'écran d'accueil ».</p>
-<button type="button" id="eff">Effacer ce téléphone</button><p class="mute">À faire en fin de chantier, après avoir envoyé la fiche de pose : supprime le dossier, le pointage et les photos de ce téléphone.</p><p class="ver">Pilote P3 · dossier chiffré</p></main>
+<button type="button" id="eff">Effacer ce téléphone</button><p class="mute">À faire en fin de chantier, après avoir envoyé la fiche de pose : supprime le dossier, le pointage et les photos de ce téléphone.</p><p class="ver">Pilote P4 · dossier chiffré</p></main>
 <script>async function pilEffacer(ask, onUnsent){
   let unsent = 0;
   try { if (indexedDB.databases) { const ls = await indexedDB.databases(); if (ls.some(d => d.name === 'publimax-levee')) { const db = await new Promise((res, rej) => { const r = indexedDB.open('publimax-levee'); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); });
