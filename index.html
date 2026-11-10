@@ -9,7 +9,7 @@ a.big{display:flex;align-items:center;justify-content:center;min-height:84px;bac
 <a class="big" href="outil.html?m=pose">Poseur</a><a class="big sec" href="outil.html?m=reception">Levée / Réception</a><a class="big sec" href="outil.html?m=suivi">Suivi</a>
 <div id="st">Préparation du mode hors réseau…</div>
 <button type="button" id="inst" hidden>⬇ Installer l'application</button><p class="mute" id="insttxt">Pour l'installer : Android (Chrome) menu ⋮ → « Installer l'application » ; iPhone (Safari) Partager → « Sur l'écran d'accueil ».</p>
-<button type="button" id="eff">Effacer ce téléphone</button><p class="mute">À faire en fin de chantier, quand le voyant est vert (« Tout est envoyé au bureau ») : supprime le dossier, le pointage et les photos de ce téléphone.</p><p class="ver">Pilote P18 · dossier chiffré</p></main>
+<button type="button" id="eff">Effacer ce téléphone</button><p class="mute">À faire en fin de chantier, quand le voyant est vert (« Tout est envoyé au bureau ») : supprime le dossier, le pointage et les photos de ce téléphone.</p><p class="ver">Pilote P20 · dossier chiffré</p></main>
 <script>async function pilEffacer(ask, onUnsent){
   let unsent = 0;
   try { if (indexedDB.databases) { const ls = await indexedDB.databases(); if (ls.some(d => d.name === 'publimax-levee')) { const db = await new Promise((res, rej) => { const r = indexedDB.open('publimax-levee'); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); });
