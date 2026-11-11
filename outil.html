@@ -2507,10 +2507,10 @@ function pThemeApply(){ const t = pTheme(); const dark = t === 'sombre' || (t ==
  var splashed = false, splashEnd = false, pend = false, st0 = 0, stm = null, hiddenAt = 0;
  function endSplash(){ G.classList.add('sout'); setTimeout(function(){ G.classList.remove('splash', 'sout'); splashEnd = true; if (pend) { pend = false; hide(); } try { IN.focus(); } catch (e) {} }, 400); }
  function show(){ G.hidden = false; if (W) W.inert = true; if (!splashed) { splashed = true; G.classList.add('splash'); st0 = Date.now(); stm = setTimeout(endSplash, 3500); } else setTimeout(function(){ try { IN.focus(); } catch (e) {} }, 60); }
- function quick(){ if (stm) { clearTimeout(stm); stm = setTimeout(endSplash, Math.max(0, 1500 - (Date.now() - st0))); } }
+ function quick(){ if (stm) { clearTimeout(stm); stm = setTimeout(endSplash, Math.max(0, 2000 - (Date.now() - st0))); } }
  document.addEventListener('visibilitychange', function(){ if (document.hidden) { hiddenAt = Date.now(); return; } var d = hiddenAt ? Date.now() - hiddenAt : 0; hiddenAt = 0; if (d < 8000 || !G.hidden || !splashEnd || document.getElementById('pcam')) return;
    G.hidden = false; G.classList.add('splash'); try { if (window.POSE_API && typeof poseSync === 'function') { poseSync(true); if (typeof posePull === 'function') posePull(true); } } catch (e) {}
-   setTimeout(function(){ G.classList.add('gfade'); setTimeout(function(){ G.hidden = true; G.classList.remove('gfade', 'splash'); }, 400); }, 1500); });
+   setTimeout(function(){ G.classList.add('gfade'); setTimeout(function(){ G.hidden = true; G.classList.remove('gfade', 'splash'); }, 400); }, 2000); });
  function hide(){ if (splashed && !splashEnd) { pend = true; return; } if (W) W.inert = false; if (G.hidden) return; G.classList.add('gfade'); setTimeout(function(){ G.hidden = true; G.classList.remove('gfade'); }, 400); }
  SH.addEventListener('change', function(){ IN.classList.toggle('vis', SH.checked); });
  var NEED = {pose: 1, reception: 2, suivi: 3}, WHO = {pose: 'Pose', reception: 'Levée / Réception', suivi: 'Suivi'}, want = (new URLSearchParams(location.search).get('m') || 'pose'); if (!NEED[want]) want = 'pose'; var need = NEED[want];
